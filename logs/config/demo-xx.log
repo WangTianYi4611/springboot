@@ -1,0 +1,26 @@
+2018-09-10 23:38:41.379  INFO 6820 --- [main] c.tianyi.main.SpringBootTestController   : Starting SpringBootTestController on DESKTOP-P216T5Q with PID 6820 (E:\software\workspace\tianyi_2017\springboot-web\target\classes started by tianyi in E:\software\workspace\tianyi_2017\springboot-web)
+2018-09-10 23:38:41.382  INFO 6820 --- [main] c.tianyi.main.SpringBootTestController   : No active profile set, falling back to default profiles: default
+2018-09-10 23:38:41.433  INFO 6820 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@30b7c004: startup date [Mon Sep 10 23:38:41 CST 2018]; root of context hierarchy
+2018-09-10 23:38:43.640  INFO 6820 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8888 (http)
+2018-09-10 23:38:43.658  INFO 6820 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-10 23:38:43.660  INFO 6820 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-09-10 23:38:43.779  INFO 6820 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-10 23:38:43.779  INFO 6820 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2349 ms
+2018-09-10 23:38:43.972  INFO 6820 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-09-10 23:38:43.977  INFO 6820 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-10 23:38:43.978  INFO 6820 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-10 23:38:43.978  INFO 6820 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-10 23:38:43.979  INFO 6820 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-10 23:38:44.299  INFO 6820 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@30b7c004: startup date [Mon Sep 10 23:38:41 CST 2018]; root of context hierarchy
+2018-09-10 23:38:44.377  INFO 6820 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto java.lang.String com.tianyi.main.SpringBootTestController.home()
+2018-09-10 23:38:44.381  INFO 6820 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-10 23:38:44.382  INFO 6820 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-10 23:38:44.425  INFO 6820 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-10 23:38:44.425  INFO 6820 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-10 23:38:44.463  INFO 6820 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-10 23:38:44.679  INFO 6820 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-10 23:38:44.999  INFO 6820 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8888 (http)
+2018-09-10 23:38:45.005  INFO 6820 --- [main] c.tianyi.main.SpringBootTestController   : Started SpringBootTestController in 4.094 seconds (JVM running for 4.906)
+2018-09-10 23:39:03.206  INFO 6820 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-10 23:39:03.207  INFO 6820 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-10 23:39:03.668  INFO 6820 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 460 ms

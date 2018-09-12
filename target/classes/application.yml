@@ -1,0 +1,33 @@
+server:
+  #端口号
+  port: 8888
+  #项目名，如果不设定，默认是 /
+  context-path: /
+ 
+mybatis:
+  typeAliasesPackage: com.tianyi.main.po
+  mapperLocations: classpath:mapper/*.xml
+
+
+spring:
+    datasource:
+        name: test
+        url: jdbc:mysql://127.0.0.1:3306/tianyi_database
+        username: root
+        password: root
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
