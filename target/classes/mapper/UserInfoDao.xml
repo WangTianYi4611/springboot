@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tianyi.main.dao.UserInfoDao" >
+
+	
+	<sql id="user_dto_sql">
+		user_name,
+		user_password,
+		user_email,
+		create_time,
+		update_time
+	</sql>
+	
+	
+	<insert id="insertUserDtoInfo" parameterType="UserDto">
+		insert into
+			sense_note_user_info
+		(
+			<include refid="user_dto_sql"></include>
+		) VALUES (
+			#{userName},
+			#{userPassword},
+			#{userEmail},
+			#{createTime},
+			#{updateTime}
+		)
+	</insert>
+	
+	
+	
+	<select id="getUserDtoInfo" resultType="UserDto">
+		select 
+			user_name userName,
+			user_password userPassword,
+			user_email userEmail,
+			create_time createTime,
+			update_time	updateTime		
+		 from sense_note_user_info where 
+			user_name = #{userName}
+	</select>
+
+	<sql id="token_dto_sql">
+		token,
+		user_name,
+		valid_time,
+		create_time
+	</sql>
+
+
+	<insert id="insertTokenDto" parameterType="TokenDto">
+		insert into
+			sense_note_user_login_token
+		(
+			<include refid="token_dto_sql"></include>
+		) VALUES (
+			#{token},
+			#{userName},
+			#{validTime},
+			#{createTime}
+		)
+	</insert>
+	
+	
+	
+	<select id="getTokenDto" resultType="TokenDto">
+		select 
+			token token,
+			valid_time validTime,
+			create_time createTime	
+		 from sense_note_user_login_token where 
+			token = #{token}
+	</select>
+
+</mapper>

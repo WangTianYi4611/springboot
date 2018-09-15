@@ -5,7 +5,7 @@ server:
   context-path: /
  
 mybatis:
-  typeAliasesPackage: com.tianyi.main.po
+  typeAliasesPackage: com.tianyi.main.dto
   mapperLocations: classpath:mapper/*.xml
 
 
