@@ -40,7 +40,11 @@ public class TokenValidFilter implements Filter{
 		logger.info("filter test");
 		
 		String uri = servletRequest.getRequestURI();
-		if("login".equals(uri)) chain.doFilter(request, response);
+		logger.info("request url is{}",uri);
+		if(uri.contains("login")){
+			chain.doFilter(request, response);
+			return;
+		}
 		
 		//token验证
 		boolean isValid = TokenUtil.checkTokenValid(servletRequest);

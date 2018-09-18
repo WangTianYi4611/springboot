@@ -15,7 +15,8 @@ import com.tianyi.main.dto.UserDto;
 import com.tianyi.main.exception.SenseNoteCommonException;
 import com.tianyi.main.po.BasicResult;
 import com.tianyi.main.service.LoginService;
-import com.tianyi.main.vo.UserVo;
+import com.tianyi.main.vo.UserInfoVo;
+import com.tianyi.main.vo.UserRequestVo;
 
 @RestController
 @RequestMapping("login")
@@ -31,18 +32,17 @@ public class LoginController {
 	 * @param userInfo
 	 */
 	@RequestMapping(value = "registerNewUser", method = RequestMethod.POST)
-	public BasicResult<String> registerNewUser(@RequestBody UserVo userVo){
+	public BasicResult<String> registerNewUser(@RequestBody UserRequestVo userVo){
 		BasicResult<String> result = new BasicResult<>();
 		try{
 			loginService.registerNewUser(userVo);
 			result.setMsg("登录成功");
 		}catch(SenseNoteCommonException e){
-			result.setCode(BasicResult.FAIL);
-			result.setMsg(e.getMessage());
+			result.setErrorMsg(e.getMessage());
 		}catch(Exception e){
 			logger.error("exception e {}",e);
 			result.setCode(BasicResult.FAIL);
-			result.setMsg("其他错误");			
+			result.setErrorMsg("服务器出错");			
 		}
 		return result;
 	}
@@ -50,22 +50,22 @@ public class LoginController {
 	 * 登录接口
 	 */
 	@RequestMapping(value = "userCheckIn",method = RequestMethod.POST)
-	public BasicResult<String> userCheckIn(@RequestBody UserVo userVo){
-		BasicResult<String> result = new BasicResult<>();
+	public BasicResult<UserInfoVo> userCheckIn(@RequestBody UserRequestVo userVo){
+		BasicResult<UserInfoVo> result = new BasicResult<>();
 		try{
-			String token = loginService.userCheckIn(userVo);
+			UserInfoVo token = loginService.userCheckIn(userVo);
 			result.setSingleResult(token);
 			result.setMsg("登录成功");
 		}catch(SenseNoteCommonException e){
-			result.setCode(BasicResult.FAIL);
-			result.setMsg(e.getMessage());
+			result.setErrorMsg(e.getMessage());
 		}catch(Exception e){
 			logger.error("exception e {}",e);
 			result.setCode(BasicResult.FAIL);
-			result.setMsg("其他错误");			
+			result.setErrorMsg(e.getMessage());		
 		}
 		return result;
 	}
 	
+
 	
 }

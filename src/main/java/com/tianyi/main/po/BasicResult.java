@@ -13,6 +13,8 @@ public class BasicResult<T> {
 	
 	private String msg = "请求成功"; // 信息
 	
+	private String errorMsg;
+	
 	private T singleResult; //单个结果值得时候返回这个
 	
 	private List<T> multipleResult; //多个结果值
@@ -47,6 +49,14 @@ public class BasicResult<T> {
 
 	public void setMultipleResult(List<T> multipleResult) {
 		this.multipleResult = multipleResult;
+	}
+
+	public String getErrorMsg() {
+		return errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 	
 	

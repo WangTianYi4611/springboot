@@ -7,8 +7,8 @@ public class UserDto {
 	private Integer id;
 	private String userName;
 	private String userPassword;
-	private String userEmail;
 	private Date createTime;
+	private String userEmail;
 	private Date updateTime;
 	public String getUserName() {
 		return userName;

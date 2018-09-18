@@ -1,6 +1,6 @@
 package com.tianyi.main.vo;
 
-public class UserVo {
+public class UserRequestVo {
 	
 	private String userName;
 	private String userPassword;

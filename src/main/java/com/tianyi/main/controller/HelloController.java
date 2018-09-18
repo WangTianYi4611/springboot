@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tianyi.main.exception.SenseNoteCommonException;
 import com.tianyi.main.po.BasicResult;
-import com.tianyi.main.vo.UserVo;
+import com.tianyi.main.vo.UserRequestVo;
 
 @RestController
 @RequestMapping("hello")

@@ -1,12 +1,13 @@
 package com.tianyi.main.service;
 
 import com.tianyi.main.dto.UserDto;
-import com.tianyi.main.vo.UserVo;
+import com.tianyi.main.vo.UserInfoVo;
+import com.tianyi.main.vo.UserRequestVo;
 
 public interface LoginService {
 	
-	 String registerNewUser(UserVo userVo); 
+	 String registerNewUser(UserRequestVo userVo); 
 	 
-	 String userCheckIn(UserVo userVo);
+	 UserInfoVo userCheckIn(UserRequestVo userVo);
 	
 }

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.alibaba.druid.util.StringUtils;
 import com.tianyi.main.dao.UserInfoDao;
 import com.tianyi.main.dto.TokenDto;
 
@@ -23,6 +24,8 @@ public class TokenUtil {
 	public static boolean checkTokenValid(HttpServletRequest request){
 		
 		String token = request.getHeader("Authorization");
+		
+		if(StringUtils.isEmpty(token)) return false;
 		
 		if(userInfoDao == null) return false;
 		

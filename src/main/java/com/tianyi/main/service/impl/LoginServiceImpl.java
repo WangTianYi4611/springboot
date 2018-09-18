@@ -12,7 +12,8 @@ import com.tianyi.main.dto.TokenDto;
 import com.tianyi.main.dto.UserDto;
 import com.tianyi.main.exception.SenseNoteCommonException;
 import com.tianyi.main.service.LoginService;
-import com.tianyi.main.vo.UserVo;
+import com.tianyi.main.vo.UserInfoVo;
+import com.tianyi.main.vo.UserRequestVo;
 
 @Service
 public class LoginServiceImpl implements LoginService{
@@ -24,7 +25,7 @@ public class LoginServiceImpl implements LoginService{
 	 * 注册新用户
 	 */
 	@Override
-	public String registerNewUser(UserVo userVo) {
+	public String registerNewUser(UserRequestVo userVo) {
 		StringBuffer result = new StringBuffer("注册成功");
 		
 		//查看用户是否存在 目前只校验用户名
@@ -45,7 +46,7 @@ public class LoginServiceImpl implements LoginService{
 	}
 
 	@Override
-	public String userCheckIn(UserVo userVo) {
+	public UserInfoVo userCheckIn(UserRequestVo userVo) {
 		// TODO Auto-generated method stub
 		String token = null;
 		
@@ -58,10 +59,15 @@ public class LoginServiceImpl implements LoginService{
 		TokenDto tokenDto = createTokenDto(token,userVo);
 		userInfoDao.insertTokenDto(tokenDto);
 		
-		return token;
+		UserInfoVo userInfoVo = new UserInfoVo();
+		userInfoVo.setToken(token);
+		userInfoVo.setUserEmail(user.getUserEmail());
+		userInfoVo.setUserName(user.getUserName());
+		
+		return userInfoVo;
 	}
 
-	private TokenDto createTokenDto(String token,UserVo user) {
+	private TokenDto createTokenDto(String token,UserRequestVo user) {
 		// TODO Auto-generated method stub
 		TokenDto tokenDto = new TokenDto();
 		tokenDto.setUserName(user.getUserName());
@@ -71,7 +77,7 @@ public class LoginServiceImpl implements LoginService{
 		return tokenDto;
 	}
 
-	private void checkUserLogin(UserDto user,UserVo submitUser) {
+	private void checkUserLogin(UserDto user,UserRequestVo submitUser) {
 		// TODO Auto-generated method stub
 		if(user == null) 
 			throw new SenseNoteCommonException("用户名不存在");
